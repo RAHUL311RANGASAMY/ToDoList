@@ -1,0 +1,147 @@
+Install node
+npm --version
+
+create project
+npm create vite@latest
+project name
+package name --will show in web page like documents after favicon 
+framework -react
+variant-js+swc --speed web compiler
+install npm --install all the dependency package.json
+
+npm run dev --run the project
+
+Entry point for our react project is --main.jsx
+html and js --name.jsx
+--jsx are always the functional components
+
+start write code in --app.jsx because the main.jsx that componenet is imported
+--componenets folder inside the --src
+
+--componenets->app.jsx return --div <components/> --close --div->main.jsx mounted
+rafce functional components
+rafc  class components
+install rafce in extension as ES7
+
+style use the index.css 
+
+let x="ram"
+print --return --div {x}
+
+--render multi times based on data
+let array=["userr1","userr2","userr3","userr4"];
+print --return --div {array.map((individual user pass)=>{return <h1>{that pass return multi times}</h1>})
+--{array.map((item)=>{return <h1>{item}</h1>})} --{}
+
+--render based on conditions
+componenets --create the valiables always and print --render --div 
+suppose let data="boy";
+{data==="boy"?<h1>Boy</h1>: <h1>Girl</h1>} --ternitory operator
+
+--event handling
+arrow function create in componenets --return before
+    let x=0;
+    const btnClick=()=>{
+      x=x+1;
+      console.log("clicked");
+      console.log(x); --this not reflected in web page only in console so use the hooks
+      }
+--button --pass the arrow function and --call the function --fnname()
+print --return --div
+        {x}
+       <button onClick={()=>{btnClick()}}>click me</button>
+
+variable --componenets -arrow fn,arrow fn --components 
+
+return --div {variable print in web page} 
+
+1.useState hooks --web page change
+--const [x,fnname]=useState(initial value);
+
+--componenets
+const [count,setCount]=useState(0);
+
+    const btnClick=()=>{
+      setCount(prevcount=>prevcount+1); --update the variable direct called setfn arrow fn not
+      
+    }
+
+--print return div      
+       {count}
+       <button onClick={()=>{btnClick()}}>click me</button>
+
+2.React props --pass data from one componenet to another 
+<Firstcomponenets propsname={propsvalue} /> --parent pass the child
+props call in arrow fn->print {props.propsname}
+d structure {propsname} in arrow fn --print return div {propsname}
+
+import FirstComponenets from './FirstComponenets';
+
+
+       <button onClick={()=>{btnClick()}}>click me</button>
+      -- <FirstComponenets data={count}/> --child components we pass the parent data as --name of props is data and value is{count}
+
+
+--we can use the d struction instead of props use {propsname}
+
+const FirstComponenets = (props) => { --props
+  return (
+    <div>{props.data}</div> ----props.propsname that we pass i parent componenets
+  )
+}
+
+--d struction 
+
+const FirstComponenets = ({data}) => {
+  return (
+    <div>{data}</div>
+  )
+}
+--pass the fn in props
+
+ <button onClick={()=>{btnClick()}}>click me</button>
+       <FirstComponenets data={count} fn={setCount}/>
+
+const FirstComponenets = ({data,fn}) => { --d structure--{}
+  return (
+    <div>
+        {data}
+        <button onClick={()=>{fn(10)}}>Set 10</button> --pass the arrow fn and --call {fnname()}
+    </div>
+    )
+
+3.UseRef to get refernce any element
+const inputref=UseRef(null);
+input ref={inputref}
+button onclick{()=>{console.log(inputref.current.value)} --
+input box text->submit->console.log print 
+
+
+const Navbar = () => {
+    const inputRef=useRef(null);--null
+  return (
+    <div>
+        <input ref={inputRef} type="text"/> --ref
+        <button onClick={()=>{console.log(inputRef.current.value)}}>submit</button> --
+
+4.Remove item in array using --filter(index)
+ const removeTask=(index)=>{
+        setData(data.filter((_,i)=>i!==index))
+    };
+    
+5.refresh data not remove --localstorage
+
+--input text save in usestate --array
+    const [data,setData]=useState([]); --array
+    const inputRef=useRef(null);
+  return (
+    <div>
+        <input ref={inputRef} type="text"/> --1 input take ref
+        <button onClick={()=>{setData([...data,inputRef.current.value])}}>submit </button> --2 [...data,]
+        {data.map((item,index)=>{return <h1 key={index}>{item} </h1>})} --web page print {}
+    </div>
+
+
+
+    
+    
