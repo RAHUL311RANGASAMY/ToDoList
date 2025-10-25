@@ -1,0 +1,82 @@
+.todolist1container {
+    margin-top: 35px;
+    width: 100%;
+    max-width: 480px;
+}
+
+.noTasksMessage {
+    color: #6b7280;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 25px 0;
+    font-weight: 400;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.content:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.taskText {
+    flex: 1;
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.removeButton {
+    padding: 8px 16px;
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.removeButton:hover {
+    background-color: #dc2626;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .todolist1container {
+        margin-top: 25px;
+    }
+
+    .noTasksMessage {
+        font-size: 1rem;
+        margin: 20px 0;
+    }
+
+    .content {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .taskText {
+        font-size: 1rem;
+    }
+
+    .removeButton {
+        width: 100%;
+        padding: 10px 16px;
+    }
+}
